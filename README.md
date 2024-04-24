@@ -1,10 +1,10 @@
-# Kalkulator Sederhana
+# Kalkulator 
 
-Ini adalah kalkulator sederhana yang dibuat dengan HTML, CSS, dan JavaScript. Kalkulator ini dapat digunakan untuk melakukan operasi matematika dasar seperti penjumlahan, pengurangan, perkalian, dan pembagian.
+Ini adalah kalkulator yang dibuat dengan HTML, CSS, dan JavaScript. Kalkulator ini dapat digunakan untuk melakukan operasi matematika dasar seperti penjumlahan, pengurangan, perkalian, dan pembagian.
 
 ## Tampilan
 
-![alert]
+![alert](https://github.com/4zan4/Callculator/blob/master/Image/callculator.png?raw=true)
 
 ## Fitur
 
