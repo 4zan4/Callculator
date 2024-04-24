@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: linear-gradient(to bottom right, #444, #333);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Menambahkan efek tebal pada pinggir kalkulator */
+        }
+        .calculator::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(to bottom right, #222, #333);
+            z-index: -1;
+        }
+        .screen {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+            font-size: 1.5em;
+            border-bottom: 2px solid #666;
+            min-height: 60px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .button {
+            padding: 30px;
+            background-color: #666;
+            color: #fff;
+            font-size: 1.2em;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #888;
+        }
+        .button.operator {
+            background-color: #ff9800;
+        }
+        .button.operator:hover {
+            background-color: #ffac33;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen" id="screen"></div>
+        <div class="buttons">
+            <button class="button" onclick="appendToScreen('7')">7</button>
+            <button class="button" onclick="appendToScreen('8')">8</button>
+            <button class="button" onclick="appendToScreen('9')">9</button>
+            <button class="button operator" onclick="appendToScreen('+')">+</button>
+            <button class="button" onclick="appendToScreen('4')">4</button>
+            <button class="button" onclick="appendToScreen('5')">5</button>
+            <button class="button" onclick="appendToScreen('6')">6</button>
+            <button class="button operator" onclick="appendToScreen('-')">-</button>
+            <button class="button" onclick="appendToScreen('1')">1</button>
+            <button class="button" onclick="appendToScreen('2')">2</button>
+            <button class="button" onclick="appendToScreen('3')">3</button>
+            <button class="button operator" onclick="appendToScreen('*')">*</button>
+            <button class="button" onclick="appendToScreen('0')">0</button>
+            <button class="button" onclick="clearScreen()">C</button>
+            <button class="button operator" onclick="calculate()">=</button>
+            <button class="button operator" onclick="appendToScreen('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToScreen(value) {
+            document.getElementById("screen").innerText += value;
+        }
+
+        function clearScreen() {
+            document.getElementById("screen").innerText = "";
+        }
+
+        function calculate() {
+            var result = eval(document.getElementById("screen").innerText);
+            document.getElementById("screen").innerText = result;
+        }
+    </script>
+</body>
+</html>
